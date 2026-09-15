@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CREATE — Создаём сайты</title>
+
+<title>CREATE — Web Studio</title>
 
 <style>
 * {
@@ -18,159 +19,261 @@ html {
 
 body {
     font-family: Arial, sans-serif;
-    background: #080808;
-    color: white;
-    line-height: 1.6;
+    background: #050505;
+    color: #fff;
+    line-height: 1.5;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
 }
 
 header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
     padding: 22px 7%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    background: rgba(8,8,8,.9);
-    border-bottom: 1px solid #222;
+    background: rgba(5,5,5,.82);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid #1c1c1c;
 }
 
 .logo {
-    font-size: 24px;
+    font-size: 25px;
     font-weight: 900;
-    letter-spacing: 3px;
+    letter-spacing: 5px;
 }
 
 nav {
     display: flex;
-    gap: 25px;
+    gap: 28px;
 }
 
 nav a {
-    color: #aaa;
-    text-decoration: none;
+    color: #999;
+    font-size: 14px;
+    transition: .3s;
 }
 
 nav a:hover {
-    color: white;
+    color: #fff;
 }
 
 .hero {
-    min-height: 88vh;
+    min-height: 100vh;
+    padding: 150px 7% 100px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 80px 7%;
-    background: radial-gradient(
-        circle at 80% 20%,
-        rgba(255,255,255,.08),
-        transparent 30%
-    );
+    background:
+        radial-gradient(circle at 80% 20%, #222 0, transparent 28%),
+        radial-gradient(circle at 10% 80%, #151515 0, transparent 25%);
 }
 
-.small-title {
-    color: #888;
-    font-size: 13px;
-    letter-spacing: 4px;
+.tag {
+    color: #777;
+    letter-spacing: 5px;
+    font-size: 12px;
     margin-bottom: 25px;
 }
 
 .hero h1 {
-    max-width: 900px;
-    font-size: clamp(42px, 8vw, 100px);
-    line-height: .95;
-    letter-spacing: -4px;
-    margin-bottom: 30px;
-}
-
-.description {
-    max-width: 560px;
-    color: #aaa;
-    font-size: 18px;
+    max-width: 1050px;
+    font-size: clamp(48px, 9vw, 110px);
+    line-height: .9;
+    letter-spacing: -5px;
     margin-bottom: 35px;
 }
 
-.button {
-    display: inline-block;
-    width: fit-content;
-    padding: 15px 25px;
-    background: white;
-    color: black;
-    text-decoration: none;
-    font-weight: 700;
-    border-radius: 8px;
+.hero h1 span {
+    color: #777;
 }
 
-section:not(.hero) {
-    padding: 110px 7%;
+.hero-text {
+    max-width: 560px;
+    color: #999;
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: fit-content;
+    padding: 16px 24px;
+    background: #fff;
+    color: #000;
+    border-radius: 8px;
+    font-weight: 800;
+    transition: .3s;
+}
+
+.button:hover {
+    transform: translateY(-4px);
+    background: #ddd;
+}
+
+section {
+    padding: 120px 7%;
+}
+
+.section-label {
+    color: #666;
+    letter-spacing: 4px;
+    font-size: 12px;
+    margin-bottom: 15px;
 }
 
 section h2 {
-    font-size: clamp(35px, 5vw, 60px);
-    margin-bottom: 50px;
+    font-size: clamp(38px, 6vw, 70px);
+    letter-spacing: -3px;
+    margin-bottom: 55px;
 }
 
-.cards,
-.works {
+.services {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: 18px;
 }
 
 .card {
-    min-height: 240px;
-    padding: 30px;
-    background: #111;
-    border: 1px solid #242424;
-    border-radius: 14px;
+    padding: 35px;
+    min-height: 280px;
+    background: #0d0d0d;
+    border: 1px solid #202020;
+    border-radius: 18px;
+    transition: .35s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border-color: #444;
+}
+
+.number {
+    color: #555;
+    font-size: 13px;
+    margin-bottom: 80px;
 }
 
 .card h3 {
-    font-size: 23px;
+    font-size: 25px;
     margin-bottom: 15px;
 }
 
 .card p {
-    color: #999;
+    color: #888;
 }
 
-.work {
-    min-height: 260px;
-    display: flex;
-    align-items: flex-end;
-    padding: 25px;
-    background: linear-gradient(145deg,#202020,#0d0d0d);
-    border: 1px solid #292929;
-    border-radius: 14px;
+.about {
+    background: #0a0a0a;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+}
+
+.about-text {
+    color: #999;
     font-size: 20px;
-    font-weight: 700;
+    max-width: 600px;
+}
+
+.features {
+    display: grid;
+    gap: 14px;
+}
+
+.feature {
+    padding: 24px;
+    border: 1px solid #222;
+    border-radius: 12px;
+    background: #0f0f0f;
+}
+
+.feature strong {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.feature span {
+    color: #777;
+    font-size: 14px;
+}
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.project {
+    min-height: 330px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    border-radius: 18px;
+    border: 1px solid #242424;
+    background: linear-gradient(145deg, #202020, #090909);
+    transition: .35s;
+}
+
+.project:hover {
+    transform: scale(1.02);
+}
+
+.project small {
+    color: #777;
+    margin-bottom: 8px;
+}
+
+.project h3 {
+    font-size: 25px;
 }
 
 .contact {
     text-align: center;
-    background: radial-gradient(
-        circle at center,
-        #171717,
-        #080808 60%
-    );
+    background:
+        radial-gradient(circle at center, #1c1c1c, #050505 60%);
+}
+
+.contact h2 {
+    max-width: 800px;
+    margin: 0 auto 25px;
 }
 
 .contact p {
-    color: #999;
-    margin-bottom: 30px;
+    color: #888;
+    margin-bottom: 35px;
 }
 
 footer {
     padding: 30px 7%;
-    border-top: 1px solid #202020;
-    color: #666;
     text-align: center;
+    color: #555;
+    border-top: 1px solid #181818;
     font-size: 13px;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 750px) {
+
     header {
         padding: 18px 5%;
+    }
+
+    .logo {
+        font-size: 20px;
     }
 
     nav {
@@ -178,34 +281,42 @@ footer {
     }
 
     nav a {
-        font-size: 12px;
+        font-size: 11px;
     }
 
     .hero {
-        min-height: 80vh;
-        padding: 60px 5%;
+        padding: 130px 5% 80px;
     }
 
     .hero h1 {
-        letter-spacing: -2px;
+        font-size: clamp(45px, 14vw, 75px);
+        letter-spacing: -3px;
     }
 
-    .description {
+    .hero-text {
         font-size: 16px;
     }
 
-    section:not(.hero) {
+    section {
         padding: 80px 5%;
     }
 
-    .cards,
-    .works {
+    .services,
+    .projects,
+    .about-grid {
         grid-template-columns: 1fr;
     }
 
-    .card,
-    .work {
-        min-height: 200px;
+    .card {
+        min-height: 220px;
+    }
+
+    .number {
+        margin-bottom: 45px;
+    }
+
+    .project {
+        min-height: 250px;
     }
 }
 </style>
@@ -218,92 +329,165 @@ footer {
 
     <nav>
         <a href="#services">Услуги</a>
-        <a href="#works">Работы</a>
-        <a href="#contacts">Контакты</a>
+        <a href="#about">О нас</a>
+        <a href="#projects">Работы</a>
     </nav>
 </header>
 
 <main>
 
 <section class="hero">
-    <p class="small-title">CREATE WEB STUDIO</p>
+
+    <div class="tag">CREATE / WEB STUDIO</div>
 
     <h1>
-        СОЗДАЁМ САЙТЫ,
-        <br>
-        КОТОРЫЕ ЗАПОМИНАЮТСЯ
+        САЙТЫ<br>
+        <span>КОТОРЫЕ РАБОТАЮТ.</span>
     </h1>
 
-    <p class="description">
-        Современные сайты для бизнеса,
+    <p class="hero-text">
+        Создаём современные сайты для бизнеса,
         проектов и личных брендов.
     </p>
 
-    <a class="button" href="#contacts">
-        Заказать сайт
+    <a class="button"
+       href="https://wa.me/996509955908?text=Здравствуйте%21%20Хочу%20заказать%20сайт%20у%20CREATE.">
+        Заказать сайт →
     </a>
+
 </section>
+
 
 <section id="services">
-    <h2>Наши услуги</h2>
 
-    <div class="cards">
+    <div class="section-label">01 / SERVICES</div>
+
+    <h2>Что мы создаём</h2>
+
+    <div class="services">
 
         <div class="card">
+            <div class="number">01</div>
             <h3>Сайт-визитка</h3>
             <p>
-                Профессиональный сайт для человека,
-                компании или проекта.
+                Представим вас, ваш проект или компанию
+                профессионально в интернете.
             </p>
         </div>
 
         <div class="card">
+            <div class="number">02</div>
             <h3>Сайт для бизнеса</h3>
             <p>
-                Сайт, который помогает представить
-                компанию в интернете.
+                Современный сайт, который помогает
+                клиентам узнать о вашем бизнесе.
             </p>
         </div>
 
         <div class="card">
+            <div class="number">03</div>
             <h3>Landing Page</h3>
             <p>
-                Яркая страница для продукта,
-                услуги или рекламы.
+                Яркая продающая страница для продукта,
+                услуги или рекламной кампании.
             </p>
         </div>
 
     </div>
+
 </section>
 
-<section id="works">
+
+<section id="about" class="about">
+
+    <div class="section-label">02 / ABOUT</div>
+
+    <h2>Почему CREATE</h2>
+
+    <div class="about-grid">
+
+        <p class="about-text">
+            Мы создаём сайты не просто ради красивого дизайна.
+            Наша цель — сделать понятный, современный
+            и удобный сайт, который помогает проекту
+            выглядеть профессионально.
+        </p>
+
+        <div class="features">
+
+            <div class="feature">
+                <strong>Современный дизайн</strong>
+                <span>Минимализм, аккуратность и внимание к деталям.</span>
+            </div>
+
+            <div class="feature">
+                <strong>Mobile First</strong>
+                <span>Сайт удобно выглядит на телефоне и компьютере.</span>
+            </div>
+
+            <div class="feature">
+                <strong>Чистый код</strong>
+                <span>HTML, CSS и JavaScript без лишнего.</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="projects">
+
+    <div class="section-label">03 / PROJECTS</div>
+
     <h2>Наши работы</h2>
 
-    <div class="works">
-        <div class="work">PROJECT 01</div>
-        <div class="work">PROJECT 02</div>
-        <div class="work">PROJECT 03</div>
+    <div class="projects">
+
+        <div class="project">
+            <small>PROJECT / 01</small>
+            <h3>Business Website</h3>
+        </div>
+
+        <div class="project">
+            <small>PROJECT / 02</small>
+            <h3>Landing Page</h3>
+        </div>
+
+        <div class="project">
+            <small>PROJECT / 03</small>
+            <h3>Personal Brand</h3>
+        </div>
+
     </div>
+
 </section>
 
-<section id="contacts" class="contact">
-    <h2>Готовы создать сайт?</h2>
+
+<section class="contact">
+
+    <div class="section-label">04 / CONTACT</div>
+
+    <h2>Есть идея для сайта?</h2>
 
     <p>
-        Напишите нам — обсудим вашу идею.
+        Напишите CREATE — обсудим проект.
     </p>
 
-    <a class="button" href="#">
-        Связаться с CREATE
+    <a class="button"
+       href="https://wa.me/996509955908?text=Здравствуйте%21%20Хочу%20заказать%20сайт%20у%20CREATE.">
+        Связаться с CREATE →
     </a>
+
 </section>
 
 </main>
+
 
 <footer>
     © 2026 CREATE WEB STUDIO
 </footer>
 
 </body>
-  </html>
-  
+</html>
