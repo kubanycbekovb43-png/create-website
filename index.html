@@ -2,20 +2,16 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-
-  <!-- ВСТАВЬ СЮДА СВОЙ GOOGLE HTML-ТЕГ -->
-  ТВОЙ_GOOGLE_ТЕГ
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="CREATE — создаём современные сайты для бизнеса, брендов и личных проектов.">
 
-  <title>CREATE — Web Studio</title>
+  <title>CREATE — Создаём сайты</title>
+  <meta name="description" content="CREATE — создаём современные сайты для бизнеса, проектов и личных брендов.">
 
   <style>
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     html {
@@ -23,272 +19,487 @@
     }
 
     body {
-      font-family: Arial, sans-serif;
-      background: #08090b;
-      color: #ffffff;
-      line-height: 1.6;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f7f9fc;
+      color: #172033;
+      line-height: 1.5;
     }
 
     a {
-      color: inherit;
       text-decoration: none;
+      color: inherit;
     }
+
+    /* HEADER */
 
     header {
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(8, 9, 11, 0.92);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid #22252b;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(15px);
+      border-bottom: 1px solid #e8ecf3;
     }
 
-    .nav {
-      max-width: 1150px;
+    .header-inner {
+      max-width: 1180px;
       margin: auto;
-      padding: 18px 22px;
+      padding: 16px 24px;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
 
+    /* LOGO */
+
     .logo {
-      font-size: 25px;
-      font-weight: 900;
-      letter-spacing: 3px;
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      font-weight: 800;
+      font-size: 22px;
+      letter-spacing: -0.5px;
     }
 
-    .logo span {
-      color: #4da3ff;
+    .logo-icon {
+      width: 45px;
+      height: 45px;
+      border-radius: 13px;
+      background: linear-gradient(135deg, #5b5ff7, #8b5cf6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      position: relative;
+      box-shadow: 0 8px 20px rgba(91, 95, 247, 0.25);
+    }
+
+    .logo-c {
+      font-size: 31px;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .logo-r {
+      position: absolute;
+      font-size: 13px;
+      font-weight: 900;
+      top: 16px;
+      left: 18px;
     }
 
     nav {
       display: flex;
-      gap: 25px;
-      font-size: 14px;
-      color: #b9bec7;
+      gap: 28px;
+      align-items: center;
     }
 
-    nav a:hover {
-      color: #ffffff;
-    }
-
-    .hero {
-      max-width: 1150px;
-      min-height: 82vh;
-      margin: auto;
-      padding: 110px 22px 80px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .tag {
-      color: #4da3ff;
-      font-size: 13px;
-      font-weight: bold;
-      letter-spacing: 4px;
-      margin-bottom: 18px;
-    }
-
-    h1 {
-      max-width: 850px;
-      font-size: clamp(45px, 8vw, 88px);
-      line-height: 0.98;
-      letter-spacing: -4px;
-      margin-bottom: 30px;
-    }
-
-    .hero p {
-      max-width: 650px;
-      color: #aeb4be;
-      font-size: 18px;
-      margin-bottom: 35px;
-    }
-
-    .button {
-      display: inline-block;
-      width: fit-content;
-      background: #ffffff;
-      color: #08090b;
-      padding: 15px 23px;
-      border-radius: 9px;
-      font-weight: bold;
+    nav a {
+      font-size: 15px;
+      font-weight: 600;
+      color: #596275;
       transition: 0.2s;
     }
 
-    .button:hover {
-      transform: translateY(-2px);
+    nav a:hover {
+      color: #5b5ff7;
     }
+
+    .nav-button {
+      background: #5b5ff7;
+      color: white !important;
+      padding: 11px 18px;
+      border-radius: 10px;
+    }
+
+    .nav-button:hover {
+      background: #474bdc;
+    }
+
+    /* HERO */
+
+    .hero {
+      max-width: 1180px;
+      margin: auto;
+      padding: 90px 24px 80px;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #eeefff;
+      color: #565af0;
+      padding: 8px 13px;
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: clamp(44px, 6vw, 76px);
+      line-height: 0.98;
+      letter-spacing: -4px;
+      margin-bottom: 25px;
+    }
+
+    h1 span {
+      color: #5b5ff7;
+    }
+
+    .hero-text {
+      color: #667085;
+      font-size: 19px;
+      max-width: 600px;
+      margin-bottom: 32px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 13px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 22px;
+      border-radius: 11px;
+      font-weight: 700;
+      transition: 0.2s;
+    }
+
+    .button-primary {
+      background: #5b5ff7;
+      color: white;
+      box-shadow: 0 10px 25px rgba(91, 95, 247, 0.2);
+    }
+
+    .button-primary:hover {
+      transform: translateY(-2px);
+      background: #474bdc;
+    }
+
+    .button-secondary {
+      background: white;
+      border: 1px solid #e0e5ee;
+      color: #293247;
+    }
+
+    .button-secondary:hover {
+      border-color: #bfc5ff;
+    }
+
+    /* HERO CARD */
+
+    .hero-card {
+      background: white;
+      border: 1px solid #e8ebf2;
+      border-radius: 25px;
+      padding: 28px;
+      box-shadow: 0 25px 60px rgba(35, 43, 70, 0.09);
+    }
+
+    .browser {
+      border: 1px solid #e8ebf2;
+      border-radius: 17px;
+      overflow: hidden;
+    }
+
+    .browser-top {
+      background: #f5f6fa;
+      padding: 12px 15px;
+      display: flex;
+      gap: 6px;
+    }
+
+    .dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: #cbd1dc;
+    }
+
+    .browser-content {
+      padding: 32px 25px;
+    }
+
+    .mini-logo {
+      font-size: 15px;
+      font-weight: 800;
+      margin-bottom: 45px;
+    }
+
+    .mini-title {
+      font-size: 31px;
+      font-weight: 800;
+      line-height: 1.05;
+      margin-bottom: 15px;
+    }
+
+    .mini-line {
+      height: 9px;
+      background: #edf0f5;
+      border-radius: 20px;
+      margin-bottom: 9px;
+    }
+
+    .mini-line.short {
+      width: 60%;
+    }
+
+    .mini-button {
+      margin-top: 22px;
+      width: 115px;
+      height: 35px;
+      background: #5b5ff7;
+      border-radius: 8px;
+    }
+
+    /* SECTION */
 
     section {
-      max-width: 1150px;
-      margin: auto;
-      padding: 90px 22px;
+      padding: 80px 24px;
     }
 
-    .section-label {
-      color: #4da3ff;
-      font-size: 12px;
-      letter-spacing: 3px;
-      font-weight: bold;
+    .section-inner {
+      max-width: 1180px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 42px;
+      letter-spacing: -1.5px;
       margin-bottom: 12px;
     }
 
-    h2 {
-      font-size: clamp(32px, 5vw, 55px);
-      margin-bottom: 45px;
-      letter-spacing: -2px;
+    .section-subtitle {
+      text-align: center;
+      color: #737d90;
+      max-width: 600px;
+      margin: 0 auto 45px;
     }
 
+    /* SERVICES */
+
     .services {
+      background: white;
+    }
+
+    .cards {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
+      gap: 20px;
     }
 
     .card {
-      border: 1px solid #252931;
-      background: #101216;
-      border-radius: 15px;
-      padding: 30px;
-      min-height: 220px;
+      background: #f8f9fc;
+      border: 1px solid #e8ebf2;
+      border-radius: 19px;
+      padding: 28px;
+      transition: 0.25s;
     }
 
-    .card-number {
-      color: #4da3ff;
-      font-size: 13px;
-      margin-bottom: 30px;
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 18px 35px rgba(30, 40, 70, 0.08);
+    }
+
+    .icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: #eeefff;
+      color: #5b5ff7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 23px;
+      margin-bottom: 20px;
     }
 
     .card h3 {
-      font-size: 23px;
-      margin-bottom: 12px;
+      font-size: 20px;
+      margin-bottom: 10px;
     }
 
     .card p {
-      color: #9ca3ae;
+      color: #70798b;
+      font-size: 15px;
     }
 
-    .about {
-      border-top: 1px solid #22252b;
-      border-bottom: 1px solid #22252b;
-    }
+    /* PROCESS */
 
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 50px;
-    }
-
-    .about-text {
-      color: #aeb4be;
-      font-size: 18px;
-    }
-
-    .features {
-      display: grid;
-      gap: 15px;
-    }
-
-    .feature {
-      padding: 20px;
-      border-left: 2px solid #4da3ff;
-      background: #101216;
-    }
-
-    .feature strong {
-      display: block;
-      margin-bottom: 5px;
-    }
-
-    .feature span {
-      color: #9ca3ae;
-      font-size: 14px;
+    .process {
+      background: #f7f9fc;
     }
 
     .steps {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
     }
 
     .step {
-      padding: 25px 0;
-      border-top: 1px solid #30343c;
+      background: white;
+      border: 1px solid #e7eaf1;
+      padding: 25px;
+      border-radius: 17px;
     }
 
-    .step b {
-      color: #4da3ff;
+    .number {
+      color: #5b5ff7;
       font-size: 14px;
-    }
-
-    .step h3 {
-      margin: 12px 0 8px;
-      font-size: 21px;
-    }
-
-    .step p {
-      color: #9ca3ae;
-      font-size: 15px;
-    }
-
-    .start {
-      text-align: center;
-      background: #101216;
-      border: 1px solid #252931;
-      border-radius: 20px;
-      padding: 70px 25px;
-    }
-
-    .start h2 {
+      font-weight: 800;
       margin-bottom: 15px;
     }
 
-    .start p {
-      color: #9ca3ae;
-      max-width: 600px;
-      margin: 0 auto 30px;
+    .step h3 {
+      margin-bottom: 8px;
     }
 
+    .step p {
+      color: #727c8e;
+      font-size: 14px;
+    }
+
+    /* CTA */
+
+    .cta {
+      max-width: 1180px;
+      margin: 70px auto;
+      padding: 65px 35px;
+      border-radius: 28px;
+      background: linear-gradient(135deg, #5b5ff7, #815cf4);
+      color: white;
+      text-align: center;
+    }
+
+    .cta h2 {
+      font-size: 42px;
+      letter-spacing: -1.5px;
+      margin-bottom: 12px;
+    }
+
+    .cta p {
+      opacity: 0.9;
+      margin-bottom: 25px;
+    }
+
+    .cta .button {
+      background: white;
+      color: #5155e9;
+    }
+
+    /* FOOTER */
+
     footer {
-      max-width: 1150px;
+      background: #151a28;
+      color: white;
+      padding: 40px 24px;
+    }
+
+    .footer-inner {
+      max-width: 1180px;
       margin: auto;
-      padding: 30px 22px;
-      border-top: 1px solid #22252b;
-      color: #727985;
-      font-size: 13px;
       display: flex;
       justify-content: space-between;
+      align-items: center;
       gap: 20px;
     }
 
-    @media (max-width: 750px) {
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+    }
+
+    .footer-icon {
+      width: 35px;
+      height: 35px;
+      border-radius: 10px;
+      background: #5b5ff7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 22px;
+      position: relative;
+    }
+
+    .footer-r {
+      position: absolute;
+      font-size: 10px;
+      top: 13px;
+      left: 14px;
+    }
+
+    .copyright {
+      color: #9299a8;
+      font-size: 13px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 800px) {
+
       nav {
         display: none;
       }
 
+      .header-inner {
+        padding: 13px 18px;
+      }
+
       .hero {
-        min-height: 75vh;
-        padding-top: 80px;
+        grid-template-columns: 1fr;
+        padding: 60px 20px 50px;
+        gap: 35px;
       }
 
       h1 {
-        letter-spacing: -2px;
+        font-size: 50px;
+        letter-spacing: -2.5px;
       }
 
-      .services,
-      .about-grid,
+      .hero-text {
+        font-size: 17px;
+      }
+
+      .hero-card {
+        padding: 17px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
       .steps {
         grid-template-columns: 1fr;
       }
 
-      section {
-        padding: 65px 20px;
+      .section-title {
+        font-size: 34px;
       }
 
-      footer {
+      .cta {
+        margin: 30px 18px;
+        padding: 45px 20px;
+      }
+
+      .cta h2 {
+        font-size: 33px;
+      }
+
+      .footer-inner {
         flex-direction: column;
+        align-items: flex-start;
       }
     }
   </style>
@@ -296,168 +507,252 @@
 
 <body>
 
-<header>
-  <div class="nav">
-    <a href="#" class="logo">CRE<span>A</span>TE</a>
+  <!-- HEADER -->
+  <header>
+    <div class="header-inner">
 
-    <nav>
-      <a href="#services">Услуги</a>
-      <a href="#about">О нас</a>
-      <a href="#process">Как работаем</a>
-    </nav>
-  </div>
-</header>
+      <a href="#" class="logo">
+        <div class="logo-icon">
+          <span class="logo-c">C</span>
+          <span class="logo-r">R</span>
+        </div>
+        CREATE
+      </a>
 
-<main>
-
-  <section class="hero">
-    <div class="tag">CREATE / WEB STUDIO</div>
-
-    <h1>САЙТЫ,<br>КОТОРЫЕ<br>РАБОТАЮТ.</h1>
-
-    <p>
-      Создаём современные сайты для бизнеса, брендов
-      и личных проектов. Дизайн, код и публикация — в одном месте.
-    </p>
-
-    <a class="button"
-       href="https://wa.me/996509955908?text=Здравствуйте%21%20Хочу%20заказать%20сайт%20у%20CREATE.">
-      Заказать сайт →
-    </a>
-  </section>
-
-
-  <section id="services">
-    <div class="section-label">01 / УСЛУГИ</div>
-    <h2>Что мы создаём</h2>
-
-    <div class="services">
-
-      <div class="card">
-        <div class="card-number">01</div>
-        <h3>Сайт-визитка</h3>
-        <p>
-          Чистый и современный сайт для представления
-          человека, бренда или небольшой компании.
-        </p>
-      </div>
-
-      <div class="card">
-        <div class="card-number">02</div>
-        <h3>Сайт для бизнеса</h3>
-        <p>
-          Структурированный сайт с услугами, информацией
-          о компании и удобным способом связи.
-        </p>
-      </div>
-
-      <div class="card">
-        <div class="card-number">03</div>
-        <h3>Landing Page</h3>
-        <p>
-          Одностраничный сайт для конкретного продукта,
-          услуги или рекламной кампании.
-        </p>
-      </div>
+      <nav>
+        <a href="#services">Услуги</a>
+        <a href="#process">Как работаем</a>
+        <a href="#contact" class="nav-button">Заказать сайт</a>
+      </nav>
 
     </div>
-  </section>
+  </header>
 
 
-  <section id="about" class="about">
-    <div class="section-label">02 / CREATE</div>
-    <h2>Начинаем с нуля.</h2>
+  <!-- HERO -->
+  <main>
 
-    <div class="about-grid">
+    <div class="hero">
 
-      <p class="about-text">
-        CREATE — новая веб-студия. Мы создаём сайты с нуля:
-        от идеи и дизайна до готового сайта в интернете.
-        Сейчас мы открыты для первых проектов.
-      </p>
+      <div>
+        <div class="badge">WEB-STUDIO CREATE</div>
 
-      <div class="features">
+        <h1>
+          Сайты,<br>
+          которые <span>работают.</span>
+        </h1>
 
-        <div class="feature">
-          <strong>Современный дизайн</strong>
-          <span>Минималистичный и аккуратный внешний вид.</span>
+        <p class="hero-text">
+          Создаём современные сайты для бизнеса, проектов
+          и личных брендов. Красиво, быстро и удобно с телефона.
+        </p>
+
+        <div class="buttons">
+          <a href="#contact" class="button button-primary">
+            Заказать сайт
+          </a>
+
+          <a href="#services" class="button button-secondary">
+            Наши услуги
+          </a>
         </div>
+      </div>
 
-        <div class="feature">
-          <strong>Mobile First</strong>
-          <span>Сайт удобно использовать на телефоне.</span>
-        </div>
 
-        <div class="feature">
-          <strong>Чистый код</strong>
-          <span>Сайт создаётся с помощью HTML и CSS.</span>
+      <!-- WEBSITE PREVIEW -->
+      <div class="hero-card">
+
+        <div class="browser">
+
+          <div class="browser-top">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+          </div>
+
+          <div class="browser-content">
+
+            <div class="mini-logo">
+              CREATE
+            </div>
+
+            <div class="mini-title">
+              Ваш бизнес<br>
+              в интернете.
+            </div>
+
+            <div class="mini-line"></div>
+            <div class="mini-line short"></div>
+
+            <div class="mini-button"></div>
+
+          </div>
+
         </div>
 
       </div>
-    </div>
-  </section>
-
-
-  <section id="process">
-    <div class="section-label">03 / ПРОЦЕСС</div>
-    <h2>Как мы работаем</h2>
-
-    <div class="steps">
-
-      <div class="step">
-        <b>01</b>
-        <h3>Обсуждаем</h3>
-        <p>
-          Узнаём, какой сайт нужен и какую задачу он должен решать.
-        </p>
-      </div>
-
-      <div class="step">
-        <b>02</b>
-        <h3>Создаём</h3>
-        <p>
-          Разрабатываем дизайн и программируем сайт.
-        </p>
-      </div>
-
-      <div class="step">
-        <b>03</b>
-        <h3>Публикуем</h3>
-        <p>
-          Проверяем сайт и размещаем его в интернете.
-        </p>
-      </div>
 
     </div>
-  </section>
 
 
-  <section>
-    <div class="start">
+    <!-- SERVICES -->
+    <section class="services" id="services">
 
-      <div class="section-label">04 / START</div>
+      <div class="section-inner">
 
-      <h2>Нужен сайт?</h2>
+        <h2 class="section-title">
+          Что мы создаём
+        </h2>
+
+        <p class="section-subtitle">
+          Всё необходимое для современного присутствия
+          в интернете.
+        </p>
+
+
+        <div class="cards">
+
+          <div class="card">
+            <div class="icon">◈</div>
+            <h3>Сайты-визитки</h3>
+            <p>
+              Небольшой профессиональный сайт,
+              который расскажет о вас или вашей компании.
+            </p>
+          </div>
+
+
+          <div class="card">
+            <div class="icon">▣</div>
+            <h3>Бизнес-сайты</h3>
+            <p>
+              Современная страница для бизнеса
+              с услугами, преимуществами и контактами.
+            </p>
+          </div>
+
+
+          <div class="card">
+            <div class="icon">✦</div>
+            <h3>Дизайн</h3>
+            <p>
+              Чистый и современный дизайн,
+              который хорошо выглядит на телефоне и компьютере.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- PROCESS -->
+    <section class="process" id="process">
+
+      <div class="section-inner">
+
+        <h2 class="section-title">
+          Как мы работаем
+        </h2>
+
+        <p class="section-subtitle">
+          Четыре простых шага от идеи до готового сайта.
+        </p>
+
+
+        <div class="steps">
+
+          <div class="step">
+            <div class="number">01</div>
+            <h3>Обсуждение</h3>
+            <p>
+              Узнаём, какой сайт вам нужен.
+            </p>
+          </div>
+
+
+          <div class="step">
+            <div class="number">02</div>
+            <h3>Дизайн</h3>
+            <p>
+              Создаём внешний вид и структуру сайта.
+            </p>
+          </div>
+
+
+          <div class="step">
+            <div class="number">03</div>
+            <h3>Разработка</h3>
+            <p>
+              Превращаем дизайн в работающий сайт.
+            </p>
+          </div>
+
+
+          <div class="step">
+            <div class="number">04</div>
+            <h3>Запуск</h3>
+            <p>
+              Публикуем сайт и передаём его вам.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CTA -->
+    <div class="cta" id="contact">
+
+      <h2>
+        Нужен сайт?
+      </h2>
 
       <p>
-        Расскажите о своей идее — обсудим, какой сайт
-        можно создать для вашего проекта.
+        Напишите нам — обсудим вашу идею.
       </p>
 
-      <a class="button"
-         href="https://wa.me/996509955908?text=Здравствуйте%21%20Хочу%20заказать%20сайт%20у%20CREATE.">
-        Обсудить проект →
+      <!-- ПОКА ЗАМЕНИМ НОМЕР, КОГДА ТЫ ДАШЬ НОВЫЙ -->
+      <a
+        href="https://wa.me/"
+        class="button"
+        target="_blank">
+        Заказать сайт
       </a>
 
     </div>
-  </section>
 
-</main>
+  </main>
 
-<footer>
-  <span>© 2026 CREATE Web Studio</span>
-  <span>Создаём. Развиваем. Публикуем.</span>
-</footer>
+
+  <!-- FOOTER -->
+  <footer>
+
+    <div class="footer-inner">
+
+      <div class="footer-logo">
+
+        <div class="footer-icon">
+          C
+          <span class="footer-r">R</span>
+        </div>
+
+        CREATE
+
+      </div>
+
+      <div class="copyright">
+        © 2026 CREATE. Все права защищены.
+      </div>
+
+    </div>
+
+  </footer>
 
 </body>
-</html>
+              </html>
